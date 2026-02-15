@@ -13,50 +13,46 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutter FIC23 POS Responsive',
       theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary),
-          useMaterial3: true,
-          textTheme: GoogleFonts.quicksandTextTheme(
-            Theme.of(context).textTheme,
+        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary),
+        useMaterial3: true,
+        textTheme: GoogleFonts.quicksandTextTheme(Theme.of(context).textTheme),
+        appBarTheme: AppBarTheme(
+          color: AppColors.primary,
+          elevation: 0,
+          titleTextStyle: GoogleFonts.quicksand(
+            color: AppColors.white,
+            fontSize: 16.0,
+            fontWeight: FontWeight.w500,
           ),
-          appBarTheme: AppBarTheme(
-            color: AppColors.primary,
-            elevation: 0,
-            titleTextStyle: GoogleFonts.quicksand(
-              color: AppColors.white,
-              fontSize: 16.0,
-              fontWeight: FontWeight.w500,
-            ),
-            iconTheme: const IconThemeData(
-              color: AppColors.primary,
-            ),
-          ),
+          iconTheme: const IconThemeData(color: AppColors.primary),
         ),
+      ),
       home: const LoginPage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+// class MyHomePage extends StatefulWidget {
+//   const MyHomePage({super.key, required this.title});
 
-  final String title;
+//   final String title;
 
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
+//   @override
+//   State<MyHomePage> createState() => _MyHomePageState();
+// }
 
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+// class _MyHomePageState extends State<MyHomePage> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
 
-        title: Text(widget.title),
-      ),
-      body: LoginPage(),
-    );
-  }
-}
+//         title: Text(widget.title),
+//       ),
+//       body: LoginPage(),
+//     );
+//   }
+// }
