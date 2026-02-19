@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_fic23pos_responsive/presentation/home/pages/dashboard_page.dart';
+import 'package:flutter_fic23pos_responsive/presentation/tablet/home/pages/dashboard_tablet_page.dart';
 
 import '../../../core/assets/assets.gen.dart';
 import '../../../core/components/buttons.dart';
@@ -43,7 +45,7 @@ class _LoginPageState extends State<LoginPage> {
           const SpaceHeight(24.0),
           const Center(
             child: Text(
-              "Kasir Jago",
+              "POS JagoFlutter",
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w700,
@@ -71,7 +73,22 @@ class _LoginPageState extends State<LoginPage> {
             obscureText: true,
           ),
           const SpaceHeight(24.0),
-          Button.filled(onPressed: () {}, label: 'Login'),
+          Button.filled(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    // return DashboardPage();
+                    return screenSize.width > 600
+                        ? DashboardTabletPage()
+                        : DashboardPage();
+                  },
+                ),
+              );
+            },
+            label: 'Login',
+          ),
         ],
       ),
     );
